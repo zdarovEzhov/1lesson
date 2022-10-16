@@ -1,17 +1,22 @@
-console.log("Hello");
-let message = "Hello!";
-let userName = "John";
-let admin;
-admin = userName;
-console.log(admin);
+let number1 = +prompt(`first value`, `0`);
+let number2 = +prompt(`second value`, `0`);
+let actionUser = prompt(`choose action (add subtract multi)`, `add`);
 
-let str = "Привет";
-let str2 = "Одинарные кавычки тоже подойдут";
-let phrase = `Обратные кавычки позволяют встраивать переменные ${str}`;
+function calc(action, arg1, arg2) {
+    if (isNaN(arg1) || isNaN(arg2)) {
+        return `работаю только с числами`;
+    } else switch (action) {
+        case `add`:
+            return arg1 + arg2;
+        case `multi`:
+            return arg1 * arg2;
+        case `subtract`:
+            return arg1 - arg2;
+        default:
+            return `oops, error`;
+    }
+}
 
-let яблоко = 1;
-let груша = 2;
+alert(calc(actionUser, number1, number2));
 
-typeof яблоко;
-console.log(typeof яблоко);
-console.log(груша + яблоко);
+console.log(calc(`add`, 2, 3));
